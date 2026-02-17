@@ -288,7 +288,7 @@ def run_rlm(
     rlm = RLM(**rlm_kwargs)
 
     try:
-        result = rlm.completion(query, context=context)
+        result = rlm.completion(prompt=context, root_prompt=query)
         return {
             "response": result.response,
             "model_used": root_model,
